@@ -26,9 +26,7 @@ def start_message(message):
         w = observation.get_weather()
         bot.send_message(message.chat.id, w.get_temperature('celsius')["temp"], reply_markup=keyboard2)
 
-@bot.message_handler(content_types=['text'])
-def end_message(message):
-    if  message.text == 'bye':
+    elif  message.text == 'bye':
         bot.send_message(message.chat.id, 'goodbye see you tomorrow', reply_markup=keyboard3)
 
 
