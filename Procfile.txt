@@ -1,1 +1,1 @@
-bot: python 3 config.py
+bot: python3 config.py
