@@ -6,7 +6,9 @@ bot = telebot.TeleBot('930440634:AAEbV5dV3vzRHWlotbe4vKGC4M6zOIFvnzI')
 keyboard1 = telebot.types.ReplyKeyboardMarkup(True, True)
 keyboard1.row('kushnarenkovo', 'ufa')
 keyboard2 = telebot.types.ReplyKeyboardMarkup(True, True)
-keyboard2.row('goodbye', 'see you tomorrow')
+keyboard2.row('bye')
+keyboard3 = telebot.types.ReplyKeyboardMarkup(True, True)
+keyboard3.row('/start')
 
 @bot.message_handler(commands=['start'])
 def first_message(message):
@@ -26,8 +28,8 @@ def start_message(message):
 
 @bot.message_handler(content_types=['text'])
 def end_message(message):
-    if  message.text == 'goodbye' or  message.text == 'see you tomorrow':
-        bot.send_message(message.chat.id, 'goodbye see you tomorrow', reply_markup=keyboard1)
+    if  message.text == 'bye':
+        bot.send_message(message.chat.id, 'goodbye see you tomorrow', reply_markup=keyboard3)
 
 
 bot.polling()
