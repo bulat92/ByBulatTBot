@@ -32,7 +32,7 @@ def start_message(message):
         bot.send_message(message.chat.id, 'Goodbye see you tomorrow', reply_markup=keyboard3)
 
     elif  message.text == 'Yes, I want to know the temperature in another city':
-        bot.send_message(message.chat.id, 'In which', reply_markup=keyboard2)
+        bot.send_message(message.chat.id, 'In which', reply_markup=keyboard1)
 
 
 bot.polling() # крутись живи вечно
