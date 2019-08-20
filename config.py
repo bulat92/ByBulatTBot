@@ -11,12 +11,15 @@ keyboard2.row('Yes, I want to know the temperature in another city')
 keyboard3 = telebot.types.ReplyKeyboardMarkup(True, True)
 keyboard3.row('/start')
 
+
+
 @bot.message_handler(commands=['start']) #фильтр обраблотчик
 def first_message(message): # имя функций
     bot.send_message(message.chat.id, "Hello you wrote me /start \nWhat city temperature do you want to know?", reply_markup=keyboard1) # бот отправляет . чат иб ответ и вывыводит клаву
     
 
 @bot.message_handler(content_types=['text'])
+
 def start_message(message):
     if message.text == 'kushnarenkovo': # если кушнаренково
         observation = owm.weather_at_place('kushnarenkovo,RU') # достать погоду
@@ -33,6 +36,9 @@ def start_message(message):
 
     elif  message.text == 'Yes, I want to know the temperature in another city':
         bot.send_message(message.chat.id, 'In which', reply_markup=keyboard1)
+    
+    else:
+        bot.send_message(message.chat.id, reply_markup=keyboard3)
 
 
 bot.polling() # крутись живи вечно
