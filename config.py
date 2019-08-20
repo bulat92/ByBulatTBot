@@ -20,15 +20,15 @@ def start_message(message):
     if message.text == 'kushnarenkovo': # если кушнаренково
         observation = owm.weather_at_place('kushnarenkovo,RU') # достать погоду
         w = observation.get_weather() # достать погоду
-        bot.send_message(message.chat.id, 'Air temperature in Kushnarenkovo' + w.get_temperature('celsius')["temp"] , reply_markup=keyboard2) # поголдду градусы отправь
+        bot.send_message(message.chat.id, 'Air temperature in Kushnarenkovo' + w.get_temperature('celsius')["temp"] + "°C", reply_markup=keyboard2) # поголдду градусы отправь
     
     elif message.text == 'ufa':
         observation = owm.weather_at_place('ufa,RU')
         w = observation.get_weather()
-        bot.send_message(message.chat.id,'Air temperature in Ufa' + w.get_temperature('celsius')["temp"], reply_markup=keyboard2)
+        bot.send_message(message.chat.id,'Air temperature in Ufa' + w.get_temperature('celsius')["temp"] + "°C" , reply_markup=keyboard2)
 
     elif  message.text == 'bye':
         bot.send_message(message.chat.id, 'Goodbye see you tomorrow', reply_markup=keyboard3)
 
 
-bot.polling() # крутись живи вечно0
+bot.polling() # крутись живи вечно
