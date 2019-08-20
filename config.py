@@ -36,9 +36,7 @@ def start_message(message):
 
     elif  message.text == 'Yes, I want to know the temperature in another city':
         bot.send_message(message.chat.id, 'In which', reply_markup=keyboard1)
-    
-   
-@bot.message_handler(func=lambda message: True)
+
 def starter(message):
         bot.send_message(message.chat.id, 'Hello', reply_markup=keyboard3)
 
