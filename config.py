@@ -31,4 +31,4 @@ def start_message(message):
         bot.send_message(message.chat.id, 'Goodbye see you tomorrow', reply_markup=keyboard3)
 
 
-bot.polling() # крутись живи вечно 
+bot.polling() # крутись живи вечно0
